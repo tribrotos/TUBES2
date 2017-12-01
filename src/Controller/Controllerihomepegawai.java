@@ -1,0 +1,51 @@
+package Controller;
+
+import Model.App;
+import Model.Pegawai;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import view.HomeAdmin;
+import view.Homepegawai;
+
+public class Controllerihomepegawai implements  ActionListener{
+    private App model;
+    private Homepegawai view;
+    private Pegawai pg;
+
+    public Controllerihomepegawai(App model,Pegawai pg) {
+        this.model = model;
+        this.view = new  Homepegawai();
+        view.setVisible(true);
+        view.addactionlistener(this);
+//        view.setSize(1000,700);
+        this.pg= pg;
+    }
+    
+    @Override
+    public void actionPerformed(ActionEvent ae) {
+        Object x= ae.getSource();
+        if (x.equals(view.getlihattransaksi())){
+            Controllerliattransaksi lt= new Controllerliattransaksi(model, pg);
+            view.setVisible(false);
+        }else if (x.equals(view.getinputtransaksi())){
+            Controllerinputtransaksi it= new Controllerinputtransaksi(model, pg);
+            view.setVisible(false);
+        }else if (x.equals(view.getlogout())){
+            Controllerhomelogin h= new Controllerhomelogin(model);
+            view.setVisible(false);
+        }else if (x.equals(view.getinput())){
+            Controllerinputobat io= new Controllerinputobat(model,pg);
+            view.setVisible(false);
+        }else if (x.equals(view.getlihatobat())){
+            Controllerlihatobat lo= new Controllerlihatobat(model, pg);
+            view.setVisible(false);
+        }else if (x.equals(view.getlihatrestock())){
+            Controllerlihatrestock lr= new Controllerlihatrestock(model, pg);
+            view.setVisible(false);
+        }else if(x.equals(view.getinputrestock())){
+            Controllertambahrestock tr= new Controllertambahrestock(model, pg);
+            view.setVisible(false);
+        }
+    }
+    
+}
