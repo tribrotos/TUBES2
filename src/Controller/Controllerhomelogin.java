@@ -34,17 +34,6 @@ public class Controllerhomelogin implements ActionListener{
            }else{
                JOptionPane.showMessageDialog(null, "password atau id salah");
            }
-       }else if(x.equals(view.getpembeli())){
-           Pembeli pe= new Pembeli();
-           pe=model.caripembeli(view.getid());
-           if (pe!= null){
-               if(pe.getPassword().equals(view.getpassword())){
-                   Controllerhomepembeli h=new Controllerhomepembeli(model,pe);
-                   view.setVisible(false);
-               }
-           }else{
-               JOptionPane.showMessageDialog(null, "password atau id salah");
-           }
        }else if (x.equals(view.getPegawai())){
            Pegawai pg=new Pegawai();
            pg= model.caripegawai(view.getid());
@@ -56,17 +45,6 @@ public class Controllerhomelogin implements ActionListener{
            }else{
                 JOptionPane.showMessageDialog(null, "password atau id salah");
            }
-       }else if(x.equals(view.getdistributor())){
-           Distributor pe= new Distributor();
-           pe=model.caridistributor(view.getid());
-           if (pe!= null){
-               if(pe.getPassword().equals(view.getpassword())){
-                   Controllerhomepembeli h=new Controllerhomepembeli(model,pe);
-                   view.setVisible(false);
-               }
-           }else{
-               JOptionPane.showMessageDialog(null, "password atau id salah");
-          }
        }
        view.refresh("");
     }

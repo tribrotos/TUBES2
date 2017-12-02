@@ -5,16 +5,16 @@ import Model.Pegawai;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import view.HomeAdmin;
-import view.Homepegawai;
+import view.HomeKasir;
 
 public class Controllerihomepegawai implements  ActionListener{
     private App model;
-    private Homepegawai view;
+    private HomeKasir view;
     private Pegawai pg;
 
     public Controllerihomepegawai(App model,Pegawai pg) {
         this.model = model;
-        this.view = new  Homepegawai();
+        this.view = new  HomeKasir();
         view.setVisible(true);
         view.addactionlistener(this);
 //        view.setSize(1000,700);
@@ -38,12 +38,6 @@ public class Controllerihomepegawai implements  ActionListener{
             view.setVisible(false);
         }else if (x.equals(view.getlihatobat())){
             Controllerlihatobat lo= new Controllerlihatobat(model, pg);
-            view.setVisible(false);
-        }else if (x.equals(view.getlihatrestock())){
-            Controllerlihatrestock lr= new Controllerlihatrestock(model, pg);
-            view.setVisible(false);
-        }else if(x.equals(view.getinputrestock())){
-            Controllertambahrestock tr= new Controllertambahrestock(model, pg);
             view.setVisible(false);
         }
     }

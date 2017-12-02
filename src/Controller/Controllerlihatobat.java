@@ -29,10 +29,7 @@ public class Controllerlihatobat implements  ActionListener{
     public void actionPerformed(ActionEvent ae) {
         Object x= ae.getSource();
         if(x.equals(view.getbtnback())){
-            if ((this.p instanceof Pembeli )||(this.p instanceof Distributor)){
-                Controllerhomepembeli c= new Controllerhomepembeli(model,this.p);
-                view.setVisible(false);
-            }else if (this.p instanceof Pegawai ){
+            if (this.p instanceof Pegawai ){
                 Controllerihomepegawai hp = new Controllerihomepegawai(model, (Pegawai ) this.p);
                 view.setVisible(false);
             }else{

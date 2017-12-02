@@ -48,15 +48,6 @@ public class ControllerhomeAdmin implements ActionListener{
         }else if (x.equals(view.getLogout())){
             Controllerhomelogin h= new Controllerhomelogin(model);
             view.setVisible(false);
-        }else if(x.equals(view.getinputdistributor())){
-            Controllerinputdistributor ih=new Controllerinputdistributor(model);
-            view.setVisible(false);  
-        }else if (x.equals(view.getlihatdistributor())){
-            Controllerlihatdistributor ld=new Controllerlihatdistributor(model);
-            view.setVisible(false);
-        }else if(x.equals(view.getliatrestock())){
-            Controllerlihatrestock lr= new Controllerlihatrestock(model, null);
-            view.setVisible(false);
         };
     }
     

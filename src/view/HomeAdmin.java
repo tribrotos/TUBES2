@@ -40,14 +40,9 @@ public class HomeAdmin extends javax.swing.JFrame {
         INPUT = new javax.swing.JButton();
         Lihatobat = new javax.swing.JButton();
         inputobat = new javax.swing.JButton();
-        lihatdistributor = new javax.swing.JButton();
-        inputdistributor = new javax.swing.JButton();
         lihatransaksi = new javax.swing.JButton();
-        lihatrestock = new javax.swing.JButton();
         logout = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
 
@@ -83,106 +78,80 @@ public class HomeAdmin extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel2.setBackground(new java.awt.Color(0, 204, 204));
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lihatpegawai.setText("lihat pegawai");
+        lihatpegawai.setText("Lihat kasir");
         lihatpegawai.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 lihatpegawaiActionPerformed(evt);
             }
         });
-        jPanel2.add(lihatpegawai, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, 174, 51));
+        jPanel2.add(lihatpegawai, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 174, 51));
 
-        inputpembeli.setText("Input pembeli");
+        inputpembeli.setText("Input Pembeli");
         inputpembeli.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inputpembeliActionPerformed(evt);
             }
         });
-        jPanel2.add(inputpembeli, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 174, 48));
+        jPanel2.add(inputpembeli, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 180, 174, 48));
 
-        lihatpembeli.setText("lihat pembeli");
+        lihatpembeli.setText("Lihat Pembeli");
         lihatpembeli.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 lihatpembeliActionPerformed(evt);
             }
         });
-        jPanel2.add(lihatpembeli, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 130, 174, 51));
+        jPanel2.add(lihatpembeli, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 174, 51));
 
-        INPUT.setText("Input pegawai");
+        INPUT.setText("Input Kasir");
         INPUT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 INPUTActionPerformed(evt);
             }
         });
-        jPanel2.add(INPUT, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 60, 174, 51));
+        jPanel2.add(INPUT, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 100, 174, 51));
 
-        Lihatobat.setText("lihat obat");
-        jPanel2.add(Lihatobat, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 200, 174, 46));
+        Lihatobat.setText("Lihat Obat");
+        jPanel2.add(Lihatobat, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 260, 174, 46));
 
-        inputobat.setText("input obat");
+        inputobat.setText("Input Obat");
         inputobat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inputobatActionPerformed(evt);
             }
         });
-        jPanel2.add(inputobat, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, 174, 46));
+        jPanel2.add(inputobat, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 174, 46));
 
-        lihatdistributor.setText("lihat distributor");
-        jPanel2.add(lihatdistributor, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 260, 174, 50));
+        lihatransaksi.setText("Lihat Transaksi");
+        jPanel2.add(lihatransaksi, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 350, 174, 50));
 
-        inputdistributor.setText("input distributor");
-        inputdistributor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputdistributorActionPerformed(evt);
-            }
-        });
-        jPanel2.add(inputdistributor, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, 174, 50));
-
-        lihatransaksi.setText("lihat transaksi");
-        jPanel2.add(lihatransaksi, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 330, 174, 50));
-
-        lihatrestock.setText("lihat restock");
-        lihatrestock.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lihatrestockActionPerformed(evt);
-            }
-        });
-        jPanel2.add(lihatrestock, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 330, 174, 46));
-
-        logout.setText("logout");
+        logout.setText("Logout");
         logout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 logoutActionPerformed(evt);
             }
         });
-        jPanel2.add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 430, 163, -1));
+        jPanel2.add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 450, 110, -1));
 
-        jPanel3.setBackground(new java.awt.Color(0, 153, 153));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Untitle.png"))); // NOI18N
-        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 70, 450, -1));
-
-        jLabel6.setFont(new java.awt.Font("Monotype Corsiva", 0, 48)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel6.setText("apotik As-syifa");
-        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        jLabel1.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        jLabel1.setText("Home Admin");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 562, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 490, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 529, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -212,14 +181,6 @@ public class HomeAdmin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_logoutActionPerformed
 
-    private void inputdistributorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputdistributorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputdistributorActionPerformed
-
-    private void lihatrestockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lihatrestockActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lihatrestockActionPerformed
-
   public void addactionlistener(ActionListener e){
       INPUT.addActionListener(e);
       lihatpegawai.addActionListener(e);
@@ -228,17 +189,9 @@ public class HomeAdmin extends javax.swing.JFrame {
       lihatpembeli.addActionListener(e);
       inputpembeli.addActionListener(e);
       lihatransaksi.addActionListener(e);
-      inputdistributor.addActionListener(e);
-      lihatdistributor.addActionListener(e);
       logout.addActionListener(e);
-      lihatrestock.addActionListener(e);
   }
-  public  JButton getinputdistributor(){
-      return inputdistributor;
-  }
-  public JButton getlihatdistributor(){
-      return lihatdistributor;
-  }
+  
   public JButton getinput(){
       return INPUT;
   }
@@ -264,27 +217,20 @@ public class HomeAdmin extends javax.swing.JFrame {
   public JButton getLogout(){
       return logout;
   }
-  public JButton getliatrestock(){
-      return lihatrestock;
-  }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton INPUT;
     private javax.swing.JButton Lihatobat;
-    private javax.swing.JButton inputdistributor;
     private javax.swing.JButton inputobat;
     private javax.swing.JButton inputpembeli;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JButton lihatdistributor;
     private javax.swing.JButton lihatpegawai;
     private javax.swing.JButton lihatpembeli;
     private javax.swing.JButton lihatransaksi;
-    private javax.swing.JButton lihatrestock;
     private javax.swing.JButton logout;
     // End of variables declaration//GEN-END:variables
 }
