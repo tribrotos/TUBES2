@@ -1,6 +1,10 @@
 
 package Model;
 
+import Model.Jualbeli;
+import Model.Obat;
+import Model.Pembeli;
+import Model.Person;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,24 +15,20 @@ public class Pegawai extends Person{
     private String jabatan;
     private double gaji;
     private String Password;
-    private List<Restock> datarestock;
     private List<Jualbeli> datajualbeli;
 
-    public Pegawai(int idpegawai, String nama, int shift, String jabatan, double gaji, String password) {
+    public Pegawai(int idpegawai, String nama, int shift, double gaji, String password) {
         this.idpegawai = idpegawai;
         this.nama = nama;
         this.shift = shift;
-        this.jabatan = jabatan;
         this.gaji = gaji;
         this.Password=password;
-        this.datarestock= new ArrayList();
         this.datajualbeli=new ArrayList();
     }
 
-    public Pegawai(String nama, int shift, String jabatan, double gaji, String Password) {
+    public Pegawai(String nama, int shift, double gaji, String Password) {
         this.nama = nama;
         this.shift = shift;
-        this.jabatan = jabatan;
         this.gaji = gaji;
         this.Password = Password;
     }
@@ -58,27 +58,12 @@ public class Pegawai extends Person{
     public String getPassword() {
         return Password;
     }
-    
-    public void Createstock( Distributor distributor, Obat obat, Pegawai pegawai){
-        Restock r=new Restock(distributor, obat, pegawai);
-        this.datarestock.add(r);
-    }
-    public void Lihatdatapegawai() {
-        System.out.println(toString());
-        for (Restock r : datarestock) {
-            System.out.println(r.toString());
-        }    
-    }
     public void setGaji(double gaji) {
         this.gaji = gaji;
     }
 
     public void setIdpegawai(int idpegawai) {
         this.idpegawai = idpegawai;
-    }
-
-    public void setJabatan(String jabatan) {
-        this.jabatan = jabatan;
     }
 
     public void setNama(String nama) {

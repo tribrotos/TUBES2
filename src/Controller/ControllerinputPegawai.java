@@ -1,5 +1,6 @@
 package Controller;
 
+import Controller.ControllerhomeAdmin;
 import Model.App;
 import Model.Pegawai;
 import java.awt.event.ActionEvent;
@@ -25,15 +26,14 @@ public class ControllerinputPegawai implements ActionListener{
     public void actionPerformed(ActionEvent ae) {
         Object x = ae.getSource();
         if (x.equals(view.getBtnDaftar())){
-            if (view.getnama().equals("")||view.getjabatan().equals("")||view.getgaji()==0||view.getshift()==0){ 
+            if (view.getnama().equals("")||view.getgaji()==0||view.getshift()==0){ 
                 JOptionPane.showMessageDialog(null, "Semua data harus di isi");
             }else{
             String nama=view.getnama();
-            String jabatan=view.getjabatan();
             int shift=view.getshift();
             double gaji=view.getgaji();
             String password=view.getPasword();
-            Pegawai p= new Pegawai(nama, shift, jabatan, gaji, password);
+            Pegawai p= new Pegawai(nama, shift, gaji, password);
             model.inputPegawai(p);
             JOptionPane.showMessageDialog(null, "data telah terinputkan");
             }

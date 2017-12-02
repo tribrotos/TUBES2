@@ -152,8 +152,7 @@ public class App {
       
       Pegawai pe;
       pe=caripegawai(p.getIdpegawai());
-      db.saverestock(new Restock(d, o, pe));
-      pe.Createstock(d, o, p);
+     
       o.setJumlah(o.getJumlah()+n);
         for (Obat dataobat1 : dataobat) {
             db.updateobat(dataobat1);

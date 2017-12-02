@@ -28,7 +28,7 @@ public class ControllerhomeAdmin implements ActionListener{
             ControllerinputPegawai I= new ControllerinputPegawai(model);
             view.setVisible(false);
         }else if (x.equals(view.getlihatpegawai())){
-            Controllerlihatpegawai L= new Controllerlihatpegawai(model);
+            ControllerLihatKasir L= new ControllerLihatKasir(model);
             view.setVisible(false);
         }else if (x.equals(view.getinputobat())){
             Controllerinputobat IO= new Controllerinputobat(model,null);

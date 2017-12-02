@@ -1,6 +1,8 @@
 
 package Controller;
 
+import Controller.ControllerhomeAdmin;
+import Controller.Controllerihomepegawai;
 import Model.App;
 import Model.Distributor;
 import Model.Pegawai;
@@ -29,7 +31,7 @@ public class Controllerlihatobat implements  ActionListener{
     public void actionPerformed(ActionEvent ae) {
         Object x= ae.getSource();
         if(x.equals(view.getbtnback())){
-            if (this.p instanceof Pegawai ){
+             if (this.p instanceof Pegawai ){
                 Controllerihomepegawai hp = new Controllerihomepegawai(model, (Pegawai ) this.p);
                 view.setVisible(false);
             }else{
