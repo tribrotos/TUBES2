@@ -9,12 +9,10 @@ import Model.Obat;
 import java.awt.event.ActionListener;
 import java.util.List;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.table.DefaultTableModel;
+import util.ComboItem;
 
-/**
- *
- * @author nanang saiful
- */
 public class Inputtransaksi extends javax.swing.JFrame {
 
     /**
@@ -34,137 +32,103 @@ public class Inputtransaksi extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        totalharga = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        totalobat = new javax.swing.JTextField();
-        idpmebeli = new javax.swing.JTextField();
-        bayar = new javax.swing.JButton();
-        home = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tabletransaksi = new javax.swing.JTable();
-        idobat = new javax.swing.JTextField();
         Jumlahobat = new javax.swing.JTextField();
         tambah = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        idobat = new javax.swing.JComboBox<>();
+        jSeparator1 = new javax.swing.JSeparator();
+        idpmebeli = new javax.swing.JComboBox<>();
+        jPanel2 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tabletransaksi = new javax.swing.JTable();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        totalharga = new javax.swing.JTextField();
+        bayar = new javax.swing.JButton();
+        home = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        totalobat = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 204, 204));
 
-        jPanel1.setBackground(new java.awt.Color(0, 102, 102));
-
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Total Harga");
-
-        totalharga.setEditable(false);
-        totalharga.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
-
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Jumlah Total Obat");
+        jPanel1.setBackground(java.awt.Color.white);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("ID Pembeli");
+        jLabel8.setForeground(java.awt.Color.black);
+        jLabel8.setText("Pembeli");
 
-        totalobat.setEditable(false);
-        totalobat.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-
-        idpmebeli.addActionListener(new java.awt.event.ActionListener() {
+        tambah.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        tambah.setText("Tambah Pembelian");
+        tambah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                idpmebeliActionPerformed(evt);
+                tambahActionPerformed(evt);
             }
         });
 
-        bayar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        bayar.setText("Bayar");
-        bayar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bayarActionPerformed(evt);
-            }
-        });
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setForeground(java.awt.Color.black);
+        jLabel1.setText("Obat");
 
-        home.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        home.setText("Home");
-        home.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                homeActionPerformed(evt);
-            }
-        });
-
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\nanang saiful\\Desktop\\resizee.png")); // NOI18N
-
-        jLabel5.setFont(new java.awt.Font("Monotype Corsiva", 0, 48)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel5.setText("apotik As-syifa");
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel2.setForeground(java.awt.Color.black);
+        jLabel2.setText("Qty");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(jLabel4))
-            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(37, 37, 37)
-                .addComponent(jLabel8))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(idpmebeli, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(jLabel7))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(totalobat, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(jLabel3))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(totalharga, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(bayar, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(83, 83, 83)
-                .addComponent(home, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel1)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(208, 208, 208)
+                                .addComponent(jLabel4))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(tambah)
+                                    .addComponent(Jumlahobat, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(idobat, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(idpmebeli, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(82, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel4))
-                .addGap(33, 33, 33)
-                .addComponent(jLabel8)
-                .addGap(11, 11, 11)
-                .addComponent(idpmebeli, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(totalobat, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(11, 11, 11)
-                .addComponent(jLabel3)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(idpmebeli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(idobat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(totalharga, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(Jumlahobat, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(bayar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(home, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addComponent(tambah, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(177, Short.MAX_VALUE))
         );
 
-        jPanel2.setBackground(new java.awt.Color(0, 204, 204));
+        jPanel2.setBackground(java.awt.Color.white);
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tabletransaksi.setBackground(new java.awt.Color(204, 255, 255));
@@ -181,34 +145,42 @@ public class Inputtransaksi extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tabletransaksi);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 375, 343));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 375, 160));
 
-        idobat.addActionListener(new java.awt.event.ActionListener() {
+        jLabel5.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
+        jLabel5.setText("List Pembelian");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel3.setForeground(java.awt.Color.black);
+        jLabel3.setText("Total Harga");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, -1, -1));
+
+        totalharga.setEditable(false);
+        totalharga.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        jPanel2.add(totalharga, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 361, 88));
+
+        bayar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        bayar.setText("Bayar");
+        bayar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                idobatActionPerformed(evt);
+                bayarActionPerformed(evt);
             }
         });
-        jPanel2.add(idobat, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 372, 104, 31));
-        jPanel2.add(Jumlahobat, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 433, 104, 30));
+        jPanel2.add(bayar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 360, 114, 39));
 
-        tambah.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        tambah.setText("Tambah");
-        tambah.addActionListener(new java.awt.event.ActionListener() {
+        home.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        home.setText("Batal");
+        home.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tambahActionPerformed(evt);
+                homeActionPerformed(evt);
             }
         });
-        jPanel2.add(tambah, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 501, -1, 35));
+        jPanel2.add(home, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 360, 115, 39));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("ID Obat");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(85, 373, -1, -1));
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Jumlah Obat");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(85, 434, -1, -1));
+        jLabel6.setText("Qty Total");
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, -1, -1));
+        jPanel2.add(totalobat, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 90, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -222,8 +194,11 @@ public class Inputtransaksi extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 564, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 426, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -233,27 +208,18 @@ public class Inputtransaksi extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_homeActionPerformed
 
-    private void bayarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bayarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bayarActionPerformed
-
-    private void idpmebeliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idpmebeliActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_idpmebeliActionPerformed
-
     private void tambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tambahActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tambahActionPerformed
 
-    private void idobatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idobatActionPerformed
+    private void bayarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bayarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_idobatActionPerformed
-
+    }//GEN-LAST:event_bayarActionPerformed
+    
     public int getid(){
-        if (idobat.getText().equals(""))
-            return 0;
-        else
-        return Integer.parseInt(idobat.getText());
+        Object item = idobat.getSelectedItem();
+        
+        return Integer.parseInt(((ComboItem)item).getValue());
     }
     public int getjumlah(){
         if (Jumlahobat.getText().equals(""))
@@ -265,17 +231,14 @@ public class Inputtransaksi extends javax.swing.JFrame {
         return Integer.parseInt((String)totalharga.getText());
     }
     public int getidpembeli(){
-        if (idpmebeli.getText().equals(""))
-            return 0;
-        else
-        return  Integer.parseInt((String)idpmebeli.getText());
+        Object item = idpmebeli.getSelectedItem();
+        
+        return Integer.parseInt(((ComboItem)item).getValue());
     }
     public int gettotal(){
         return Integer.parseInt((String) totalobat.getText());
     }
-    public void setid( String s){
-        idobat.setText(s);
-    }
+    
     public void setjumlah(String s){
         Jumlahobat.setText(s);
     }
@@ -294,13 +257,19 @@ public class Inputtransaksi extends javax.swing.JFrame {
     public JButton gethome(){
     return home;
     }
+    public JComboBox getcomboobat(){
+    return idobat;
+    }
+    public JComboBox getcombopembeli(){
+    return idpmebeli;
+    }
     public void addactionlistener(ActionListener e){
       bayar.addActionListener(e);
       tambah.addActionListener(e);
       home.addActionListener(e);
     }
     public void refresh(String s){
-    idobat.setText(s);
+    idobat.setSelectedIndex(0);
     Jumlahobat.setText(s);
     }
     public void viewall(List<Obat> obats){
@@ -324,25 +293,26 @@ public class Inputtransaksi extends javax.swing.JFrame {
         refresh(s);
         totalharga.setText("0");
         totalobat.setText("0");
-        idpmebeli.setText(s);
+        idpmebeli.setSelectedIndex(0);
     }    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Jumlahobat;
     private javax.swing.JButton bayar;
     private javax.swing.JButton home;
-    private javax.swing.JTextField idobat;
-    private javax.swing.JTextField idpmebeli;
+    private javax.swing.JComboBox<String> idobat;
+    private javax.swing.JComboBox<String> idpmebeli;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable tabletransaksi;
     private javax.swing.JButton tambah;
     private javax.swing.JTextField totalharga;

@@ -6,7 +6,6 @@ import Model.Jualbeli;
 import Model.Obat;
 import Model.Pegawai;
 import Model.Pembeli;
-import Model.Restock;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -127,7 +126,8 @@ public class Database {
             String query = "select * from pegawai";
             ResultSet rs = statement.executeQuery(query);
             while (rs.next()) {
-                Pegawai p = new Pegawai(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(4), rs.getInt(5), rs.getString(6));
+                Pegawai p = new Pegawai(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(5), rs.getString(6));
+                p.setUsername(rs.getString("username"));
                 daftarPegawai.add(p);
             }
             return daftarPegawai;
@@ -236,34 +236,6 @@ public class Database {
             throw new IllegalArgumentException("terjadi kesalahan saat loaddata distributor");
         }
     }
-    public void saverestock(Restock r) {
-        try {
-            String query = "insert into restock(iddistributor,idpegawai,idobat) values"
-                    + "('" + r.getDistributor().getIddistributor() + "',"
-                    + "'" + r.getPegawai().getIdpegawai() + "',"
-                    + "'" + r.getDataobat().getIdobat() + "')";
-            statement.execute(query, Statement.RETURN_GENERATED_KEYS);
-            ResultSet rs = statement.getGeneratedKeys();
-        } catch (Exception e) {
-            throw new IllegalArgumentException("terjadi kesalahan saat save data rstock");
-        }
-    }
-    public ArrayList<Restock> loadrestock(App model) {
-        try {
-            ArrayList<Restock> daftarrestock= new ArrayList<>();
-            String query = "select * from restock";
-            ResultSet rs = statement.executeQuery(query);
-            while (rs.next()) {
-                Pegawai p=model.caripegawai(rs.getInt(3));
-                Distributor d=model.caridistributor(rs.getInt(2));
-                Obat o1= model.cariobat(rs.getInt(4));
-                Restock r = new Restock(rs.getInt(1), d, o1, p);
-                daftarrestock.add(r);
-            }
-            return daftarrestock;
-        } catch (Exception e) {
-            throw new IllegalArgumentException("terjadi kesalahan saat load peserta");
-        }
-    }
+    
 
 }

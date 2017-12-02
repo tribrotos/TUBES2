@@ -28,7 +28,7 @@ public class Controllerhomelogin implements ActionListener{
     public void actionPerformed(ActionEvent ae) {
        Object x=ae.getSource();
        if (x.equals(view.getadmin())){
-           if ((view.getid()==1) &&(view.getpassword().equals("123"))){
+           if ((view.getid().equals("admin")) &&(view.getpassword().equals("123"))){
                ControllerhomeAdmin ha= new ControllerhomeAdmin(model);
                view.setVisible(false);
            }else{
@@ -36,7 +36,7 @@ public class Controllerhomelogin implements ActionListener{
            }
        }else if (x.equals(view.getPegawai())){
            Pegawai pg=new Pegawai();
-           pg= model.caripegawai(view.getid());
+           pg = model.caripegawaibyusername(view.getid());
            if (pg!=null){
                if (pg.getPassword().equals(view.getpassword())){
                    Controllerihomepegawai p = new  Controllerihomepegawai(model,pg);

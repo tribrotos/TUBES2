@@ -16,6 +16,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
+import util.ComboItem;
 import view.Inputtransaksi;
 
 /**
@@ -26,6 +27,8 @@ public class Controllerinputtransaksi implements ActionListener{
     private Inputtransaksi view;
     private App model;
     private List<Obat> obats;
+    private List<Obat> listObat;
+    private List<Pembeli> listPembeli;
     private int harga;
     private int jumlah;
     private Pegawai pg;
@@ -37,10 +40,14 @@ public class Controllerinputtransaksi implements ActionListener{
         view.setVisible(true);
         this.model = model;
         this.obats=new ArrayList();
+        this.listObat=new ArrayList();
+        this.listPembeli=new ArrayList();
         view.viewall(obats);
         view.setharga("0");
         view.settotal("0");
         this.pg=pg;
+//        initComboObat();
+        initComboPembeli();
     }
     public Controllerinputtransaksi( App model) {
         this.view = new Inputtransaksi();
@@ -48,19 +55,44 @@ public class Controllerinputtransaksi implements ActionListener{
         view.setVisible(true);
         this.model = model;
         this.obats=new ArrayList();
+        this.listObat=new ArrayList();
+        this.listPembeli=new ArrayList();
         view.viewall(obats);
 //        view.setSize(1000,700);
         view.setharga("0");
         view.settotal("0");
+//        initComboObat();
+        initComboPembeli();
     }
+    
+    public void initComboObat(){
+        listObat = model.getDataobat();
+        
+        for(Obat o: listObat){
+            System.out.println("o " + o);
+            view.getcomboobat().addItem(new ComboItem(o.getNama(), Integer.toString(listObat.indexOf(o))));
+        }
+        
+    }
+    
+    public void initComboPembeli(){
+        listPembeli = model.getDatapembeli();
+        
+        for(Pembeli p: listPembeli){
+            view.getcombopembeli().addItem(new ComboItem(p.getNama(), Integer.toString(listPembeli.indexOf(p))));
+        }
+        
+    }
+    
     @Override
     public void actionPerformed(ActionEvent ae) {
         Object x = ae.getSource();
         
         if(x.equals(view.gettambah())){
             int id =view.getid();
+            
             Obat o1 =new Obat();
-            o1=model.cariobat(id);
+            o1 = listObat.get(id);
             if (o1!=null){
                 if (o1.getJumlah()>view.getjumlah()){
                     Obat o= new Obat();
@@ -85,18 +117,15 @@ public class Controllerinputtransaksi implements ActionListener{
             Controllerihomepegawai h= new Controllerihomepegawai(model,pg);
             view.setVisible(false);
         }else if(x.equals(view.getbayar())){
-            if (view.getidpembeli()==0){
-                JOptionPane.showMessageDialog(null, "idpembeli haru di isi");
-            }else{
+            
             Pembeli pbl=new  Pembeli();
-            pbl=model.caripembeli(view.getidpembeli());
+            pbl= listPembeli.get(view.getidpembeli());
             model.tambahtransaksi(this.pg, pbl, obats, view.gettotal(), view.getharga());
             view.allrefresh("");
             JOptionPane.showMessageDialog(null, "telah terbayar");
             obats.removeAll(obats);
             view.viewall(obats);
             
-            }
         }
         
         

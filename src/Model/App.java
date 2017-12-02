@@ -112,8 +112,10 @@ public class App {
         return null;
     }
     public Pegawai caripegawaibyusername(String username){
+        
         boolean t=false;
         for (Pegawai p :datapegawai) {
+            
             if (p.getUsername().equalsIgnoreCase(username))
                 return p;
         }
@@ -156,7 +158,18 @@ public class App {
     }
 
     
-    
+
+    public void tambahRestock(Pegawai p,Distributor d,Obat o, int n){
+      
+      Pegawai pe;
+      pe=caripegawai(p.getIdpegawai());
+     
+      o.setJumlah(o.getJumlah()+n);
+        for (Obat dataobat1 : dataobat) {
+            db.updateobat(dataobat1);
+        }
+    }
+
     public void tambahtransaksi(Pegawai pg,Pembeli p,List<Obat> o,int jumlah,int harga){
         pg.Createjualbeli(p, o, jumlah,harga);
         db.savetransaksi(new Jualbeli(p, pg, o, harga, jumlah));

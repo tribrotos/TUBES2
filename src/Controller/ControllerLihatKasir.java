@@ -5,20 +5,19 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import view.LihatPegawai;
-import view.Lihatdistributor;
 
-public class Controllerlihatdistributor extends MouseAdapter  implements ActionListener{
+public class ControllerLihatKasir extends MouseAdapter  implements ActionListener{
     private App model;
-    private Lihatdistributor view;
+    private LihatPegawai view;
 
-    public Controllerlihatdistributor(App model) {
-        view=new Lihatdistributor();
+    public ControllerLihatKasir(App model) {
+        view=new LihatPegawai();
         view.setVisible(true);
         view.addAdapter(this);
         view.addListener(this);    
-//        view.setSize(1000,700);
         this.model = model;
-        view.viewall(model.getDataDistributors());
+//        view.setSize(1000,700);
+        view.viewall(model.getDatapegawai());
     }
     
     @Override

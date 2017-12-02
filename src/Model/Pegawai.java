@@ -1,6 +1,10 @@
 
 package Model;
 
+import Model.Jualbeli;
+import Model.Obat;
+import Model.Pembeli;
+import Model.Person;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,22 +16,21 @@ public class Pegawai extends Person{
     private double gaji;
     private String Password;
     private String username;
+
     private List<Jualbeli> datajualbeli;
 
-    public Pegawai(int idpegawai, String nama, int shift, String jabatan, double gaji, String password) {
+    public Pegawai(int idpegawai, String nama, int shift, double gaji, String password) {
         this.idpegawai = idpegawai;
         this.nama = nama;
         this.shift = shift;
-        this.jabatan = jabatan;
         this.gaji = gaji;
         this.Password=password;
         this.datajualbeli=new ArrayList();
     }
 
-    public Pegawai(String nama, int shift, String jabatan, double gaji, String Password) {
+    public Pegawai(String nama, int shift, double gaji, String Password) {
         this.nama = nama;
         this.shift = shift;
-        this.jabatan = jabatan;
         this.gaji = gaji;
         this.Password = Password;
     }
@@ -73,16 +76,13 @@ public class Pegawai extends Person{
     public void setUsername(String username) {
         this.username = username;
     }
+
     public void setGaji(double gaji) {
         this.gaji = gaji;
     }
 
     public void setIdpegawai(int idpegawai) {
         this.idpegawai = idpegawai;
-    }
-
-    public void setJabatan(String jabatan) {
-        this.jabatan = jabatan;
     }
 
     public void setNama(String nama) {

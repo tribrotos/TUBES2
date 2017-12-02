@@ -106,11 +106,11 @@ public class Homelogin extends javax.swing.JFrame {
     public String getpassword(){
         return password.getText();
     }
-    public int getid(){
+    public String getid(){
         if (id.getText().equals(""))
-            return 0;
+            return "";
         else
-         return  Integer.parseInt(id.getText());
+         return  id.getText();
     }
     public void addactionlistener(ActionListener e){
         admin.addActionListener(e);
