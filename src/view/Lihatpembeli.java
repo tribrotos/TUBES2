@@ -16,7 +16,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author nanang saiful
+ * @author tri
  */
 public class Lihatpembeli extends javax.swing.JFrame {
 
@@ -112,7 +112,7 @@ public class Lihatpembeli extends javax.swing.JFrame {
     
     public void viewall(List<Pembeli> pembeli){
           String[] judul={
-            "id pembeli","Nama pembeli","Password"
+            "id pembeli","Nama pembeli", "No Hp"
             };
       String[][] data=new String[pembeli.size()][3];
         for (int i = 0; i < pembeli.size(); i++) {
@@ -120,7 +120,7 @@ public class Lihatpembeli extends javax.swing.JFrame {
             Pembeli p=pembeli.get(i);
             data[i][0]=String.valueOf(p.getId());
             data[i][1]=String.valueOf(p.getNama());
-            data[i][2]=String.valueOf(p.getPassword());
+            data[i][2]=String.valueOf(p.getNoHp());
             
         }
         tablepembeli.setModel(new DefaultTableModel(data, judul));

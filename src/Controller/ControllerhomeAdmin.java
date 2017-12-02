@@ -28,7 +28,7 @@ public class ControllerhomeAdmin implements ActionListener{
             ControllerinputPegawai I= new ControllerinputPegawai(model);
             view.setVisible(false);
         }else if (x.equals(view.getlihatpegawai())){
-            ControllerLihatKasir L= new ControllerLihatKasir(model);
+            ControllerLihatPegawai L= new ControllerLihatPegawai(model);
             view.setVisible(false);
         }else if (x.equals(view.getinputobat())){
             Controllerinputobat IO= new Controllerinputobat(model,null);
@@ -43,7 +43,7 @@ public class ControllerhomeAdmin implements ActionListener{
             Controllerlihatpembeli lp= new Controllerlihatpembeli(model);
             view.setVisible(false);            
         }else if (x.equals(view.getlihattransaksi())){
-            Controllerliattransaksi t= new Controllerliattransaksi(model,null);
+            Controllerliatjualbeli t= new Controllerliatjualbeli(model,null);
             view.setVisible(false);
         }else if (x.equals(view.getLogout())){
             Controllerhomelogin h= new Controllerhomelogin(model);

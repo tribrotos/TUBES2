@@ -19,9 +19,9 @@ public class Obat {
         this.jumlah=jumlah;
     }
 
-    public Obat(int idobat) {
-        this.idobat = idobat;
-    }
+//    public Obat(int idobat) {
+//        this.idobat = idobat;
+//    }
     
     public void setHarga(int harga) {
         this.harga = harga;

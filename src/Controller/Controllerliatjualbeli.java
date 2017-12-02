@@ -10,19 +10,19 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.util.ArrayList;
 import java.util.List;
-import view.Lihattransaksi;
+import view.LihatJualbeli;
 
-public class Controllerliattransaksi extends MouseAdapter implements ActionListener{
-    private Lihattransaksi view;
+public class Controllerliatjualbeli extends MouseAdapter implements ActionListener{
+    private LihatJualbeli view;
     private App model;
     private Database db;
     private Pegawai pg;
     
-    public Controllerliattransaksi( App model,Pegawai pg) {
+    public Controllerliatjualbeli( App model,Pegawai pg) {
         this.db=new Database();
         this.db.connect();
         this.pg=pg;
-        this.view = new Lihattransaksi();
+        this.view = new LihatJualbeli();
         view.addactionListener(this);
         view.addAdapter(this);
         view.setVisible(true);

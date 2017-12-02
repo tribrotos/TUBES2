@@ -9,10 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Pegawai extends Person{
-    private int idpegawai;
-    private String nama;
+   
     private int shift;
-    private String jabatan;
     private double gaji;
     private String Password;
     private String username;
@@ -20,7 +18,7 @@ public class Pegawai extends Person{
     private List<Jualbeli> datajualbeli;
 
     public Pegawai(int idpegawai, String nama, int shift, double gaji, String password) {
-        this.idpegawai = idpegawai;
+        this.id = idpegawai;
         this.nama = nama;
         this.shift = shift;
         this.gaji = gaji;
@@ -33,10 +31,6 @@ public class Pegawai extends Person{
         this.shift = shift;
         this.gaji = gaji;
         this.Password = Password;
-    }
-
-    public Pegawai(int idpegawai) {
-        this.idpegawai = idpegawai;
     }
     
     public Pegawai() {
@@ -81,14 +75,6 @@ public class Pegawai extends Person{
         this.gaji = gaji;
     }
 
-    public void setIdpegawai(int idpegawai) {
-        this.idpegawai = idpegawai;
-    }
-
-    public void setNama(String nama) {
-        this.nama = nama;
-    }
-
     public void setShift(int shift) {
         this.shift = shift;
     }
@@ -97,17 +83,6 @@ public class Pegawai extends Person{
         return gaji;
     }
 
-    public int getIdpegawai() {
-        return idpegawai;
-    }
-
-    public String getJabatan() {
-        return jabatan;
-    }
-
-    public String getNama() {
-        return nama;
-    }
 
     public int getShift() {
         return shift;

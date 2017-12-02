@@ -17,14 +17,14 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 import util.ComboItem;
-import view.Inputtransaksi;
+import view.InputJualbeli;
 
 /**
  *
  * @author nanang saiful
  */
-public class Controllerinputtransaksi implements ActionListener{
-    private Inputtransaksi view;
+public class Controllerinputjualbeli implements ActionListener{
+    private InputJualbeli view;
     private App model;
     private List<Obat> obats;
     private List<Obat> listObat;
@@ -34,8 +34,8 @@ public class Controllerinputtransaksi implements ActionListener{
     private Pegawai pg;
     private Database db;
     
-    public Controllerinputtransaksi( App model,Pegawai pg) {
-        this.view = new Inputtransaksi();
+    public Controllerinputjualbeli( App model,Pegawai pg) {
+        this.view = new InputJualbeli();
         view.addactionlistener(this);
         view.setVisible(true);
         this.model = model;
@@ -46,11 +46,11 @@ public class Controllerinputtransaksi implements ActionListener{
         view.setharga("0");
         view.settotal("0");
         this.pg=pg;
-//        initComboObat();
+        initComboObat();
         initComboPembeli();
     }
-    public Controllerinputtransaksi( App model) {
-        this.view = new Inputtransaksi();
+    public Controllerinputjualbeli( App model) {
+        this.view = new InputJualbeli();
         view.addactionlistener(this);
         view.setVisible(true);
         this.model = model;
@@ -61,7 +61,7 @@ public class Controllerinputtransaksi implements ActionListener{
 //        view.setSize(1000,700);
         view.setharga("0");
         view.settotal("0");
-//        initComboObat();
+        initComboObat();
         initComboPembeli();
     }
     

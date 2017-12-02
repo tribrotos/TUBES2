@@ -6,11 +6,11 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import view.LihatPegawai;
 
-public class ControllerLihatKasir extends MouseAdapter  implements ActionListener{
+public class ControllerLihatPegawai extends MouseAdapter  implements ActionListener{
     private App model;
     private LihatPegawai view;
 
-    public ControllerLihatKasir(App model) {
+    public ControllerLihatPegawai(App model) {
         view=new LihatPegawai();
         view.setVisible(true);
         view.addAdapter(this);

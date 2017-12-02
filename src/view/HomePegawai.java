@@ -12,12 +12,12 @@ import javax.swing.JButton;
  *
  * @author nanang saiful
  */
-public class HomeKasir extends javax.swing.JFrame {
+public class HomePegawai extends javax.swing.JFrame {
 
     /**
      * Creates new form Homepegawai
      */
-    public HomeKasir() {
+    public HomePegawai() {
         initComponents();
     }
 

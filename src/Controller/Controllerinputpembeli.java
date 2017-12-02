@@ -24,12 +24,14 @@ public class Controllerinputpembeli implements  ActionListener{
     public void actionPerformed(ActionEvent ae) {
         Object x= ae.getSource();
         if (x.equals(view.getJBDone())){
-            if (view.getpass().equals("")||view.getNama().equals("")){
+            if (view.getNama().equals("")){
                 JOptionPane.showMessageDialog(null, "Semua data harus di isi");
             }else {
             String nama=view.getNama();
-            String password=view.getpass();
-            Pembeli p= new Pembeli( nama,password);
+            String noHp=view.getNoHp();
+            Pembeli p= new Pembeli();
+            p.setNama(nama);
+            p.setNoHp(noHp);
              model.masukkanDataPembeli(p);
              JOptionPane.showMessageDialog(null, "data telah terinputkan");
             }

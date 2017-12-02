@@ -1,51 +1,24 @@
 package Model;
 
 public class Pembeli extends Person{
-   private int id;
-   private String nama; 
-   private String Password;
+   private String noHp; 
 
-    public Pembeli(int id, String nama,String Password) {
+    public Pembeli(int id, String nama,String noHp) {
         this.id = id;
         this.nama = nama;
-        this.Password=Password;
+        this.noHp=noHp;
     }
 
     public Pembeli() {
        
     }
 
-    public Pembeli(String nama, String Password) {
-        this.nama = nama;
-        this.Password = Password;
+    public String getNoHp() {
+        return noHp;
     }
 
-    public Pembeli(int id) {
-        this.id = id;
-    }
-   
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setNama(String nama) {
-        this.nama = nama;
-    }
-
-    public String getNama() {
-        return nama;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public String getPassword() {
-        return Password;
-    }
-
-    public void setPassword(String Password) {
-        this.Password = Password;
+    public void setNoHp(String noHp) {
+        this.noHp = noHp;
     }
     
     @Override

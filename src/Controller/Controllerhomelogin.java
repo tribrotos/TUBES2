@@ -1,7 +1,6 @@
 package Controller;
 
 import Model.App;
-import Model.Distributor;
 import Model.Pegawai;
 import Model.Pembeli;
 import java.awt.event.ActionEvent;

@@ -13,12 +13,12 @@ import javax.swing.JComboBox;
 import javax.swing.table.DefaultTableModel;
 import util.ComboItem;
 
-public class Inputtransaksi extends javax.swing.JFrame {
+public class InputJualbeli extends javax.swing.JFrame {
 
     /**
      * Creates new form Inputtransaksi
      */
-    public Inputtransaksi() {
+    public InputJualbeli() {
         initComponents();
     }
 
@@ -62,7 +62,7 @@ public class Inputtransaksi extends javax.swing.JFrame {
         jLabel8.setText("Pembeli");
 
         tambah.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        tambah.setText("Tambah Pembelian");
+        tambah.setText("Tambah Item");
         tambah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tambahActionPerformed(evt);

@@ -1,7 +1,6 @@
 package Database;
 
 import Model.App;
-import Model.Distributor;
 import Model.Jualbeli;
 import Model.Obat;
 import Model.Pegawai;
@@ -33,12 +32,12 @@ public class Database {
 
     public void savePegawai(Pegawai m) {
         try {
-            String query = "insert into pegawai(nama,shift,jabatan,gaji,password) values"
+            String query = "insert into pegawai(nama,shift,gaji,password) values"
                     + "('"
                     //                    + m.getIdpegawai() + "', "+ "'"
                     + m.getNama() + "', "
                     + "'" + m.getShift() + "', "
-                    + "'" + m.getJabatan() + "', "
+                    
                     + "'" + m.getGaji() + "', "
                     + "'" + m.getPassword() + "')";
             statement.execute(query);
@@ -67,9 +66,9 @@ public class Database {
 
     public void savePembeli(Pembeli p) {
         try {
-            String query = "insert into pembeli(namapembeli,password) values"
+            String query = "insert into pembeli(namapembeli,noHp) values"
                     + "('" + p.getNama() + "',"
-                    + "'" + p.getPassword() + "')";
+                    + "'" + p.getNoHp() + "')";
             statement.execute(query, Statement.RETURN_GENERATED_KEYS);
             ResultSet rs = statement.getGeneratedKeys();
             if (rs.next()) {
@@ -85,7 +84,7 @@ public class Database {
         try {
             String query = "insert into transaksi(idpembeli,idpegawai,totalharga,jumlahobat) values"
                     + "('" + t.getPembeli().getId() + "',"
-                    + "'" + t.getPegawai().getIdpegawai() + "',"
+                    + "'" + t.getPegawai().getId() + "',"
                     + "'" + t.getTotalharga() + "',"
                     + "'" + t.getJumlahobat() + "')";
             statement.execute(query, Statement.RETURN_GENERATED_KEYS);
@@ -126,7 +125,7 @@ public class Database {
             String query = "select * from pegawai";
             ResultSet rs = statement.executeQuery(query);
             while (rs.next()) {
-                Pegawai p = new Pegawai(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(5), rs.getString(6));
+                Pegawai p = new Pegawai(rs.getInt("idpegawai"), rs.getString("nama"), rs.getInt("shift"), rs.getInt("gaji"), rs.getString("password"));
                 p.setUsername(rs.getString("username"));
                 daftarPegawai.add(p);
             }
@@ -142,7 +141,7 @@ public class Database {
             String query = "select * from pembeli";
             ResultSet rs = statement.executeQuery(query);
             while (rs.next()) {
-                Pembeli p = new Pembeli(rs.getInt(1), rs.getString(2), rs.getString(3));
+                Pembeli p = new Pembeli(rs.getInt(1), rs.getString(2), rs.getString("noHp"));
                 daftarPembeli.add(p);
             }
             return daftarPembeli;
@@ -204,38 +203,7 @@ public class Database {
 
     }
 
-    public void savedistributor(Distributor d) {
-        try {
-            String query = "insert into distributor(namadistributor,kontakditributor,alamatdistributor,password) values"
-                    + "('" + d.getNama() + "',"
-                    + "'" + d.getKontak() + "',"
-                    + "'" + d.getAlamat() + "',"
-                    + "'" + d.getPassword() + "')";
-            statement.execute(query, Statement.RETURN_GENERATED_KEYS);
-            ResultSet rs = statement.getGeneratedKeys();
-            if (rs.next()) {
-                int generatedId = rs.getInt(1);
-                d.setIddistributor(generatedId);
-            }
-        } catch (Exception e) {
-            throw new IllegalArgumentException("terjadi kesalahan saat save tim");
-        }
-    }
-
-    public ArrayList<Distributor> loaddistributor() {
-        try {
-            ArrayList<Distributor> daftarDistributor = new ArrayList<>();
-            String query = "select * from distributor";
-            ResultSet rs = statement.executeQuery(query);
-            while (rs.next()) {
-                Distributor o = new Distributor(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
-                daftarDistributor.add(o);
-            }
-            return daftarDistributor;
-        } catch (Exception e) {
-            throw new IllegalArgumentException("terjadi kesalahan saat loaddata distributor");
-        }
-    }
+    
     
 
 }

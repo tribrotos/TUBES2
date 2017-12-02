@@ -4,7 +4,6 @@ package Controller;
 import Controller.ControllerhomeAdmin;
 import Controller.Controllerihomepegawai;
 import Model.App;
-import Model.Distributor;
 import Model.Pegawai;
 import Model.Pembeli;
 import Model.Person;

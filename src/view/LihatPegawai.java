@@ -110,16 +110,15 @@ public class LihatPegawai extends javax.swing.JFrame {
     
     public void viewall(List<Pegawai> pegawai){
           String[] judul={
-            "idpegawai","Nama pegawai","Shift","jabatan","gaji"
+            "idpegawai","Nama pegawai","Shift","gaji"
             };
       String[][] data=new String[pegawai.size()][5];
         for (int i = 0; i < pegawai.size(); i++) {
             String[] data1 = data[i];
             Pegawai p=pegawai.get(i);
-            data[i][0]=String.valueOf(p.getIdpegawai());
+            data[i][0]=String.valueOf(p.getId());
             data[i][1]=String.valueOf(p.getNama());
             data[i][2]=String.valueOf(p.getShift());
-            data[i][3]=String.valueOf(p.getJabatan());
             data[i][4]=String.valueOf(p.getGaji());
             
         }

@@ -18,12 +18,12 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author nanang saiful
  */
-public class Lihattransaksi extends javax.swing.JFrame {
+public class LihatJualbeli extends javax.swing.JFrame {
 
     /**
      * Creates new form Lihattransaksi
      */
-    public Lihattransaksi() {
+    public LihatJualbeli() {
         initComponents();
     }
 
@@ -113,7 +113,7 @@ public class Lihattransaksi extends javax.swing.JFrame {
             Jualbeli jb=jualbeli.get(i);
             data[i][0]=String.valueOf(jb.getIdtransaksi());
             data[i][1]=String.valueOf(jb.getPembeli().getId());
-            data[i][2]=String.valueOf(jb.getPegawai().getIdpegawai());
+            data[i][2]=String.valueOf(jb.getPegawai().getId());
             data[i][3]=String.valueOf(jb.getTotalharga());
             data[i][4]=String.valueOf(jb.getJumlahobat());
         }

@@ -13,7 +13,6 @@ public class App {
    private List <Obat> dataobat=new ArrayList();
    private List<Pegawai> datapegawai=new ArrayList();
    private List<Pembeli> datapembeli= new ArrayList();
-   private List<Distributor> dataDistributors= new ArrayList();
    private Database db;
    Scanner input= new Scanner(System.in);
    
@@ -24,11 +23,6 @@ public class App {
         this.datapegawai=db.loadPegawai();
         this.datapembeli=db.loadPembeli();
         this.dataobat=db.loadobat();
-        this.dataDistributors=db.loaddistributor();
-    }
-
-    public List<Distributor> getDataDistributors() {
-        return dataDistributors;
     }
 
     public List<Pembeli> getDatapembeli() {
@@ -83,12 +77,6 @@ public class App {
             System.out.println(p.toString());
         }
     }
-    public void masukkandatadistributor(String nama, String kontak, String alamat,String password){
-        Distributor d= new Distributor(nama, kontak, alamat, password);
-        db.savedistributor(d);
-        this.dataDistributors.add(d);
-        this.dataDistributors=db.loaddistributor();
-    }
 //    public void liatDatadistributor(){
 //        for (Distributor d :dataDistributors) {
 //            System.out.println(d.toString());
@@ -106,7 +94,7 @@ public class App {
     public Pegawai caripegawai(int id){
         boolean t=false;
         for (Pegawai p :datapegawai) {
-            if (p.getIdpegawai()==id)
+            if (p.getId()==id)
                 return p;
         }
         return null;
@@ -147,28 +135,8 @@ public class App {
         }
         return dt;
     }
-    
-    public Distributor caridistributor(int id){
-        for (Distributor d1 : dataDistributors) {
-            if (d1.getIddistributor()==id){
-                return d1;
-            }
-        }
-        return null;
-    }
 
     
-
-    public void tambahRestock(Pegawai p,Distributor d,Obat o, int n){
-      
-      Pegawai pe;
-      pe=caripegawai(p.getIdpegawai());
-     
-      o.setJumlah(o.getJumlah()+n);
-        for (Obat dataobat1 : dataobat) {
-            db.updateobat(dataobat1);
-        }
-    }
 
     public void tambahtransaksi(Pegawai pg,Pembeli p,List<Obat> o,int jumlah,int harga){
         pg.Createjualbeli(p, o, jumlah,harga);
