@@ -11,7 +11,7 @@ public class Pegawai extends Person{
     private String jabatan;
     private double gaji;
     private String Password;
-    private List<Restock> datarestock;
+    private String username;
     private List<Jualbeli> datajualbeli;
 
     public Pegawai(int idpegawai, String nama, int shift, String jabatan, double gaji, String password) {
@@ -21,7 +21,6 @@ public class Pegawai extends Person{
         this.jabatan = jabatan;
         this.gaji = gaji;
         this.Password=password;
-        this.datarestock= new ArrayList();
         this.datajualbeli=new ArrayList();
     }
 
@@ -59,15 +58,20 @@ public class Pegawai extends Person{
         return Password;
     }
     
-    public void Createstock( Distributor distributor, Obat obat, Pegawai pegawai){
-        Restock r=new Restock(distributor, obat, pegawai);
-        this.datarestock.add(r);
-    }
     public void Lihatdatapegawai() {
         System.out.println(toString());
-        for (Restock r : datarestock) {
-            System.out.println(r.toString());
-        }    
+        
+//        for (Restock r : datarestock) {
+//            System.out.println(r.toString());
+//        }    
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
     public void setGaji(double gaji) {
         this.gaji = gaji;

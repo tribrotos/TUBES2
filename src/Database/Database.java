@@ -16,7 +16,7 @@ import org.omg.PortableInterceptor.DISCARDING;
 
 public class Database {
 
-    private String server = "jdbc:mysql://localhost/apotik";
+    private String server = "jdbc:mysql://localhost/apotik2";
     private String dbuser = "root";
     private String dbpasswd = "";
     private Statement statement = null;
